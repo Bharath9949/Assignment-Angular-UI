@@ -1,0 +1,49 @@
+<div>
+  <div class="alert alert-success text-center"><h2>PS Global Task - Simple Interest Calculator</h2>
+  </div>
+</div>
+
+<div class="container row">
+  <div class="container col-md-offset-3 col-md-6">
+    <div class="form">
+      <div class="form-group">
+        <label>Principal Amount</label>
+        <input type="number" placeholder="0" 
+        class="form-control" [(ngModel)]="CustomerModel.principalAmount">
+      </div>
+      <div class="form-group">
+        <label>Time (In Years)</label>
+        <input type="number" placeholder="0" 
+        class="form-control" [(ngModel)]="CustomerModel.years">
+      </div>
+      <div class="form-group">
+        <label>Customer Name</label>
+        <input type="text" placeholder="Eg..Bharath Kumar" 
+        class="form-control" [(ngModel)]="CustomerModel.name">
+      </div>
+      <div class="form-group">
+        <label>Customer Phone Number</label>
+        <input type="text" placeholder="Customer Phone Number" 
+        class="form-control" [(ngModel)]="CustomerModel.phoneNumber">
+      </div>
+      <div class="form-group">
+        <label>Customer Mail Id</label>
+        <input type="text" placeholder="Customer Phone Number" 
+        class="form-control" [(ngModel)]="CustomerModel.mailId">
+      </div>
+      <div *ngIf="showCustomerDetails" class="form-group">
+        <label>Interest Amount : {{CustomerModel.interestAmount}}</label><br>
+        <label>Total Amount : {{CustomerModel.totalAmount}}</label>
+      </div>
+      <div class="btn btn-info">
+        <input type="button" (click)="calculateInterest()" value="Calculate Interest"
+        class="form-control">
+      </div>
+      <div *ngIf="showCustomerDetails" class="btn btn-info" style="margin: 10px;">
+        <input type="button" (click)="saveCustomerDetais()" value="Post Details to core banking system"
+        class="form-control">
+      </div>
+  
+    </div>
+  </div>
+  </div>
