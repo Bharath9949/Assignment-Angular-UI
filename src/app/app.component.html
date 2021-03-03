@@ -32,6 +32,7 @@
         class="form-control" [(ngModel)]="CustomerModel.mailId">
       </div>
       <div *ngIf="showCustomerDetails" class="form-group">
+        <label>Interest Rate (%) : {{CustomerModel.interestRate}}</label><br>
         <label>Interest Amount : {{CustomerModel.interestAmount}}</label><br>
         <label>Total Amount : {{CustomerModel.totalAmount}}</label>
       </div>

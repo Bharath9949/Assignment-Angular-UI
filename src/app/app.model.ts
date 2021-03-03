@@ -1,12 +1,12 @@
 
 export class Customer{
-name:string="";
-phoneNumber:String="";
-mailId:string="";
-principalAmount:number=null;
+name:string;
+phoneNumber:String;
+mailId:string;
+principalAmount:number;
 years:number=null;
-interestAmount:number=0;
-totalAmount:number=0;
-
+interestRate:number;
+interestAmount:number;
+totalAmount:number;
 }
 

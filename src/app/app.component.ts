@@ -24,6 +24,7 @@ export class AppComponent {
       console.log(data);
       this.CustomerModel.interestAmount = data.interestAmount;
       this.CustomerModel.totalAmount = data.totalAmount;
+      this.CustomerModel.interestRate = data.interestRate;
       this.updateShowCustomerDetails();
     });;
   }
