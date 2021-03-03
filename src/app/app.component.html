@@ -5,7 +5,7 @@
 
 <div class="container row">
   <div class="container col-md-offset-3 col-md-6">
-    <div class="form">
+    <div class="">
       <div class="form-group">
         <label>Principal Amount</label>
         <input type="number" placeholder="0" 
@@ -35,15 +35,24 @@
         <label>Interest Amount : {{CustomerModel.interestAmount}}</label><br>
         <label>Total Amount : {{CustomerModel.totalAmount}}</label>
       </div>
+    
       <div class="btn btn-info">
-        <input type="button" (click)="calculateInterest()" value="Calculate Interest"
+        <input  type="button" (click)="calculateInterest()" value="Calculate Interest"
         class="form-control">
       </div>
       <div *ngIf="showCustomerDetails" class="btn btn-info" style="margin: 10px;">
         <input type="button" (click)="saveCustomerDetais()" value="Post Details to core banking system"
         class="form-control">
       </div>
+      <div class="row"  *ngIf="showMsg">
+        <div class="col-xs-12">
+          <p class="alert alert-success">
+              <strong>Customer Details Posted Successfully</strong>
+          </p>
+        </div>
+      </div>
   
     </div>
   </div>
   </div>
+  

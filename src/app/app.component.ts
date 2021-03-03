@@ -13,6 +13,7 @@ export class AppComponent {
   title = 'customer-app';
   showCustomerDetails : boolean = false;
   enableInterestButton : boolean = true;
+  showMsg: boolean = false;
 
   constructor(private customerService : CustomerService){}
 
@@ -23,12 +24,17 @@ export class AppComponent {
       console.log(data);
       this.CustomerModel.interestAmount = data.interestAmount;
       this.CustomerModel.totalAmount = data.totalAmount;
+      this.updateShowCustomerDetails();
     });;
+  }
+
+  updateShowCustomerDetails(){
     this.showCustomerDetails=true;
   }
 
   saveCustomerDetais(){
     this.customerService.save(this.CustomerModel).subscribe();
+    this.showMsg = true;
   }
 }
 
