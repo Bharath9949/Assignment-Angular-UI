@@ -1,6 +1,8 @@
 import { Injectable, Type } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Customer } from './app.model';
+import { catchError} from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
 
 
 
@@ -20,7 +22,9 @@ export class CustomerService {
     return this.http.get<Customer>(interestUrl2);
   }
 
+
   public save(CustomerModel: Customer) {
     return this.http.post<Customer>(this.usersUrl, CustomerModel);
   }
+
 }

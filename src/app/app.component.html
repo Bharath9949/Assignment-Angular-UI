@@ -45,10 +45,23 @@
         <input type="button" (click)="saveCustomerDetais()" value="Post Details to core banking system"
         class="form-control">
       </div>
-      <div class="row"  *ngIf="showMsg">
+      <div class="row"  *ngIf="showMsg" style="margin: 10px;">
         <div class="col-xs-12">
           <p class="alert alert-success">
               <strong>Customer Details Posted Successfully</strong>
+              <button type="button" class="close" (click)="closeMsg()" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+          </p>
+        </div>
+      </div>
+      <div class="row"  *ngIf="showError" style="margin: 10px;">
+        <div class="col-xs-12">
+          <p class="alert alert-danger">
+              <strong>Customer Details Posting Failed</strong>
+              <button type="button" class="close" (click)="closeError()" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
           </p>
         </div>
       </div>

@@ -14,6 +14,7 @@ export class AppComponent {
   showCustomerDetails : boolean = false;
   enableInterestButton : boolean = true;
   showMsg: boolean = false;
+  showError: boolean = false;
 
   constructor(private customerService : CustomerService){}
 
@@ -34,8 +35,18 @@ export class AppComponent {
   }
 
   saveCustomerDetais(){
-    this.customerService.save(this.CustomerModel).subscribe();
-    this.showMsg = true;
+    this.customerService.save(this.CustomerModel).subscribe((data:any) => {this.showMsg = true},
+    (error) => {this.showError = true});
+    this.CustomerModel = new Customer;
+    this.showCustomerDetails=false;
+  }
+
+  closeError(){
+    this.showError = false;
+  }
+
+  closeMsg(){
+    this.showMsg = false;
   }
 }
 
